@@ -66,9 +66,10 @@ const Register = () => {
       Register
     </Typography>
     <TextField
-      placeholder="name"
+      placeholder="Enter your name"
       value={inputs.name}
       onChange={handleChange}
+      fullWidth= {50}
       name="name"
       margin="normal"
       type="text"
@@ -77,10 +78,11 @@ const Register = () => {
       InputLabelProps={{ style: { color: 'white' } }} // Set input label color to white
     />
     <TextField
-      placeholder="email"
+      placeholder="Enter your email"
       value={inputs.email}
       name="email"
       margin="normal"
+      fullWidth= {50}
       type="email"
       required
       onChange={handleChange}
@@ -88,9 +90,10 @@ const Register = () => {
       InputLabelProps={{ style: { color: 'white' } }} // Set input label color to white
     />
     <TextField
-      placeholder="password"
+      placeholder="Enter your password"
       value={inputs.password}
       name="password"
+      fullWidth= {50}
       margin="normal"
       type="password"
       required
@@ -101,15 +104,16 @@ const Register = () => {
 
     <Button
       type="submit"
-      sx={{ borderRadius: 3, marginTop: 3 }}
+      sx={{  background: 'linear-gradient(to right, red, black)',  borderRadius: 3, marginTop: 3 }}
       variant="contained"
-      color="primary"
+      color="grey"
+
     >
       Submit
     </Button>
     <Button
       onClick={() => navigate("/login")}
-      sx={{ borderRadius: 3, marginTop: 3  ,color:"white"}}
+      sx={{ borderRadius: 3, marginTop: 3  , color:"white"}}
     >
       Already Registered? Please Login
     </Button>
