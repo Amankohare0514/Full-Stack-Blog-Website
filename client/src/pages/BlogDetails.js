@@ -66,7 +66,7 @@ const BlogDetails = () => {
           flexDirection="column"
           marginTop="30px"
           sx={{
-            background: 'transparent', // Transparent background
+            background: 'white', 
             borderRadius: 0, // Remove border radius
           }}
         >
