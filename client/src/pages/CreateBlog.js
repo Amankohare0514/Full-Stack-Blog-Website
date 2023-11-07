@@ -38,71 +38,85 @@ const CreateBlog = () => {
   };
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <Box
-          width={"50%"}
-          border={3}
-          borderRadius={10}
-          padding={3}
-          margin="auto"
-          boxShadow={"10px 10px 20px #ccc"}
-          display="flex"
-          flexDirection={"column"}
-          marginTop="30px"
-        >
-          <Typography
-            variant="h2"
-            textAlign={"center"}
-            fontWeight="bold"
-            padding={3}
-            color="gray"
-          >
-            Create A Pots
-          </Typography>
-          <InputLabel
-            sx={{ mb: 1, mt: 2, fontSize: "24px", fontWeight: "bold" }}
-          >
-            Title
-          </InputLabel>
-          <TextField
-            name="title"
-            value={inputs.title}
-            onChange={handleChange}
-            margin="normal"
-            variant="outlined"
-            required
-          />
-          <InputLabel
-            sx={{ mb: 1, mt: 2, fontSize: "24px", fontWeight: "bold" }}
-          >
-            Data
-          </InputLabel>
-          <TextField
-            name="description"
-            value={inputs.description}
-            onChange={handleChange}
-            margin="normal"
-            variant="outlined"
-            required
-          />
-          <InputLabel
-            sx={{ mb: 1, mt: 2, fontSize: "24px", fontWeight: "bold" }}
-          >
-            Image URL
-          </InputLabel>
-          <TextField
-            name="image"
-            value={inputs.image}
-            onChange={handleChange}
-            margin="normal"
-            variant="outlined"
-            required
-          />
-          <Button type="submit" color="primary" variant="contained">
-            Publish
-          </Button>
-        </Box>
-      </form>
+   <form onSubmit={handleSubmit}>
+  <Box
+    width="100%" // Full width
+    padding={3}
+    margin="auto"
+    boxShadow="10px 10px 20px #ccc"
+    display="flex"
+    flexDirection="column"
+    marginTop="30px"
+    sx={{
+      background: 'transparent', // Transparent background
+    }}
+  >
+   <Typography
+  variant="h2"
+  sx={{
+    textAlign: 'center',
+    fontWeight: 'bold',
+    color: 'transparent', // Make the text transparent
+    background: 'linear-gradient(to right, red, black)', // Linear gradient background
+    WebkitBackgroundClip: 'text', // Apply the gradient as a text fill
+    display: 'inline',
+  }}
+>
+  Create your Post
+</Typography>
+
+    <InputLabel sx={{ mb: 1, mt: 2, fontSize: "24px", fontWeight: "bold" }}>
+      Title
+    </InputLabel>
+    <TextField
+      name="title"
+      value={inputs.title}
+      onChange={handleChange}
+      margin="normal"
+      variant="outlined"
+      required
+    />
+    <InputLabel sx={{ mb: 1, mt: 2, fontSize: "24px", fontWeight: "bold" }}>
+      Tell your story
+    </InputLabel>
+    <TextField
+      name="description"
+      value={inputs.description}
+      onChange={handleChange}
+      margin="normal"
+      variant="outlined"
+      required
+    />
+    <InputLabel sx={{ mb: 1, mt: 2, fontSize: "24px", fontWeight: "bold" }}>
+      Image URL
+    </InputLabel>
+    <TextField
+      name="image"
+      value={inputs.image}
+      onChange={handleChange}
+      margin="normal"
+      variant="outlined"
+      required
+    />
+  <Button
+  type="submit"
+  color="primary"
+  variant="contained"
+  sx={{
+    width: '150px',       // Set button width to 150px
+    backgroundColor: 'grey',
+    '&:hover': {
+      backgroundColor: 'red', // Change background color on hover to red
+    },
+    margin: '50px auto 0',  // Top margin of 50px, center horizontally
+  }}
+>
+  Publish
+</Button>
+  </Box>
+</form>
+
+
     </>
   );
 };

@@ -42,63 +42,85 @@ const Login = () => {
   };
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <Box
-          maxWidth={450}
-          display="flex"
-          flexDirection={"column"}
-          alignItems="center"
-          justifyContent={"center"}
-          margin="auto"
-          marginTop={5}
-          boxShadow="10px 10px 20px #ccc"
-          padding={3}
-          borderRadius={5}
-        >
-          <Typography
-            variant="h4"
-            sx={{ textTransform: "uppercase" }}
-            padding={3}
-            textAlign="center"
-          >
-            Login
-          </Typography>
+     <form onSubmit={handleSubmit}>
+  <Box
+    maxWidth={450}
+    display="flex"
+    flexDirection={"column"}
+    alignItems="center"
+    justifyContent={"center"}
+    margin="auto"
+    marginTop={5}
+    boxShadow="10px 10px 20px #ccc"
+    padding={3}
+    borderRadius={5}
+    sx={{
+      background: 'linear-gradient(to right, red, black)',
+      border: '2px solid white',
+      color: 'white', // Set text color to white
+    }}
+  >
+    <Typography
+      variant="h4"
+      sx={{ textTransform: "uppercase" }}
+      padding={3}
+      textAlign="center"
+    >
+      Login
+    </Typography>
+    <TextField
+      placeholder="email"
+      value={inputs.email}
+      name="email"
+      margin="normal"
+      type="email"
+      required
+      onChange={handleChange}
+      sx={{
+        '& input': { color: 'white' , width: '350px' }, // Set input text color to white
+        '& label': { color: 'white' }, // Set input label color to white
+      }}
+    />
+    <TextField
+      placeholder="password"
+      value={inputs.password}
+      name="password"
+      margin="normal"
+      type="password"
+      required
+      onChange={handleChange}
+      sx={{
+        '& input': { color: 'white' , width: '350px'}, // Set input text color to white
+        '& label': { color: 'white' }, // Set input label color to white
+      }}
+    />
 
-          <TextField
-            placeholder="email"
-            value={inputs.email}
-            name="email"
-            margin="normal"
-            type={"email"}
-            required
-            onChange={handleChange}
-          />
-          <TextField
-            placeholder="password"
-            value={inputs.password}
-            name="password"
-            margin="normal"
-            type={"password"}
-            required
-            onChange={handleChange}
-          />
+    <Button
+      type="submit"
+      sx={{
+        background: 'linear-gradient(to right, red, black)',
+        borderRadius: 3,
+        marginTop: 3,
+        color: 'white', // Set button text color to white
+      }}
+      variant="contained"
+      color="primary"
+    >
+      Submit
+    </Button>
+    <Button
+      onClick={() => navigate("/register")}
+      sx={{
+        borderRadius: 3,
+        marginTop: 3,
+        color: 'white', // Set button text color to white
+      }}
+    >
+      Not a user? Please Register
+    </Button>
+  </Box>
+</form>
 
-          <Button
-            type="submit"
-            sx={{ borderRadius: 3, marginTop: 3 }}
-            variant="contained"
-            color="primary"
-          >
-            Submit
-          </Button>
-          <Button
-            onClick={() => navigate("/register")}
-            sx={{ borderRadius: 3, marginTop: 3 }}
-          >
-            Not a user ? Please Register
-          </Button>
-        </Box>
-      </form>
     </>
   );
 };

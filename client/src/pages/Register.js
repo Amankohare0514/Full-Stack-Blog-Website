@@ -69,12 +69,11 @@ const Register = () => {
       placeholder="Enter your name"
       value={inputs.name}
       onChange={handleChange}
-      fullWidth= {50}
       name="name"
       margin="normal"
       type="text"
       required
-      InputProps={{ style: { color: 'white' } }} // Set input text color to white
+      InputProps={{ style: { color: 'white' , width: '350px'} }} // Set input text color to white
       InputLabelProps={{ style: { color: 'white' } }} // Set input label color to white
     />
     <TextField
@@ -82,23 +81,21 @@ const Register = () => {
       value={inputs.email}
       name="email"
       margin="normal"
-      fullWidth= {50}
       type="email"
       required
       onChange={handleChange}
-      InputProps={{ style: { color: 'white' } }} // Set input text color to white
+      InputProps={{ style: { color: 'white' , width: '350px' } }} // Set input text color to white
       InputLabelProps={{ style: { color: 'white' } }} // Set input label color to white
     />
     <TextField
       placeholder="Enter your password"
       value={inputs.password}
       name="password"
-      fullWidth= {50}
       margin="normal"
       type="password"
       required
       onChange={handleChange}
-      InputProps={{ style: { color: 'white' } }} // Set input text color to white
+      InputProps={{ style: { color: 'white' , width: '350px'} }} // Set input text color to white
       InputLabelProps={{ style: { color: 'white' } }} // Set input label color to white
     />
 

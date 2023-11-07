@@ -56,31 +56,35 @@ const BlogDetails = () => {
   };
   console.log(blog);
   return (
-    <v>
+    <div>
       <form onSubmit={handleSubmit}>
         <Box
-          width={"50%"}
-          border={3}
-          borderRadius={10}
+          width="100%" // Full width
           padding={3}
           margin="auto"
-          boxShadow={"10px 10px 20px #ccc"}
           display="flex"
-          flexDirection={"column"}
+          flexDirection="column"
           marginTop="30px"
+          sx={{
+            background: 'transparent', // Transparent background
+            borderRadius: 0, // Remove border radius
+          }}
         >
           <Typography
             variant="h2"
-            textAlign={"center"}
-            fontWeight="bold"
-            padding={3}
-            color="gray"
+            sx={{
+              textAlign: 'center',
+              fontWeight: 'bold',
+              color: 'transparent', // Make the text transparent
+              background: 'linear-gradient(to right, red, black)', // Linear gradient background
+              WebkitBackgroundClip: 'text', // Apply the gradient as a text fill
+              display: 'inline',
+            }}
           >
-            Update A Pots
+            Update A Post
           </Typography>
-          <InputLabel
-            sx={{ mb: 1, mt: 2, fontSize: "24px", fontWeight: "bold" }}
-          >
+
+          <InputLabel sx={{ mb: 1, mt: 2, fontSize: "24px", fontWeight: "bold" }}>
             Title
           </InputLabel>
           <TextField
@@ -91,9 +95,7 @@ const BlogDetails = () => {
             variant="outlined"
             required
           />
-          <InputLabel
-            sx={{ mb: 1, mt: 2, fontSize: "24px", fontWeight: "bold" }}
-          >
+          <InputLabel sx={{ mb: 1, mt: 2, fontSize: "24px", fontWeight: "bold" }}>
             Data
           </InputLabel>
           <TextField
@@ -104,9 +106,7 @@ const BlogDetails = () => {
             variant="outlined"
             required
           />
-          <InputLabel
-            sx={{ mb: 1, mt: 2, fontSize: "24px", fontWeight: "bold" }}
-          >
+          <InputLabel sx={{ mb: 1, mt: 2, fontSize: "24px", fontWeight: "bold" }}>
             Image URL
           </InputLabel>
           <TextField
@@ -117,13 +117,26 @@ const BlogDetails = () => {
             variant="outlined"
             required
           />
-          <Button type="submit" color="warning" variant="contained">
+          <Button
+            type="submit"
+            color="warning"
+            variant="contained"
+            sx={{
+              width: '200px',       // Set button width to 200px
+              backgroundColor: 'grey',
+              '&:hover': {
+                backgroundColor: 'red', // Change background color on hover to red
+              },
+              margin: '50px auto 0',  // Top margin of 50px, center horizontally
+            }}
+          >
             UPDATE
           </Button>
         </Box>
       </form>
-    </v>
+    </div>
   );
+
 };
 
 export default BlogDetails;
